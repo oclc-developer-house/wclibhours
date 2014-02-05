@@ -4,13 +4,21 @@ require 'vendor/autoload.php';
     set_include_path(get_include_path() . PATH_SEPARATOR . 'vendor/');
     require_once "autoload.php";
 $myorg = $_GET['org']; // Query Param
-if (is_numeric($myorg)){
-$myorg_rdf = $myorg.".rdf";
-}
-else {
-//error or check user's location for nearest organization
-  exit("org parameter not numeric");
-}
+
+if (isset( $_GET['org'] )){
+	$myorg = $_GET['org']; // Query Param
+	if (is_numeric($myorg)){
+		$myorg_rdf = $myorg.".rdf";
+	}
+	else {
+	//error or check user's location for nearest organization
+	  exit("org parameter not numeric");
+	}
+}//if org is set
+else{
+	echo "Please specify the OCLC institution number in the URL.<br/>e.g. hrs_gh.php?org=110570";
+}//if org not set
+
 try {
 $graph = EasyRdf_Graph::newAndLoad("https://worldcat.org/wcr/organization/data/".$myorg_rdf);
 }
