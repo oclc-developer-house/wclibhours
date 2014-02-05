@@ -1,9 +1,20 @@
 <?php
 require 'vendor/autoload.php';
+    set_include_path(get_include_path() . PATH_SEPARATOR . 'lib/');
+    set_include_path(get_include_path() . PATH_SEPARATOR . 'vendor/');
+    require_once "autoload.php";
+$myorg = $_GET['org']; // Query Param
+if (is_numeric($myorg)){
+$myorg_rdf = $myorg.".rdf";
+}
+else {
+//error or check user's location for nearest organization
+  exit("org parameter not numeric");
+}
+$graph = EasyRdf_Graph::newAndLoad("https://worldcat.org/wcr/organization/data/".$myorg_rdf);
+$graph->load('https://worldcat.org/wcr/normal-hours/data/'.$myorg_rdf);
+$graph->load('https://worldcat.org/wcr/special-hours/data/'.$myorg_rdf);
 
-$graph = EasyRdf_Graph::newAndLoad("https://worldcat.org/wcr/organization/data/110570.rdf");
-$graph->load('https://worldcat.org/wcr/normal-hours/data/110570.rdf');
-$graph->load('https://worldcat.org/wcr/special-hours/data/110570.rdf');
 
 //echo $graph->dump();
 
