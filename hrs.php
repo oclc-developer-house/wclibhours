@@ -11,9 +11,24 @@ else {
 //error or check user's location for nearest organization
   exit("org parameter not numeric");
 }
+try {
 $graph = EasyRdf_Graph::newAndLoad("https://worldcat.org/wcr/organization/data/".$myorg_rdf);
+}
+catch (Exception $e) {
+  echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+try {
 $graph->load('https://worldcat.org/wcr/normal-hours/data/'.$myorg_rdf);
+}
+catch (Exception $e) {
+  echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+try {
 $graph->load('https://worldcat.org/wcr/special-hours/data/'.$myorg_rdf);
+}
+catch (Exception $e) {
+  echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
 
 
 //echo $graph->dump();
