@@ -34,7 +34,47 @@ echo '<h3>Holidays</h3>';
 foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
 	$desc= $hoursSpecSp->get('wcir:description');
 	if ($desc=="Holiday"){
-		//Open or Closed?
+		printhrs($hoursSpecSp);		
+    } //holiday
+    
+} //foreach
+
+echo '<h3>Spring Break</h3>';
+foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
+	
+	$desc= $hoursSpecSp->get('wcir:description');
+	if ($desc=="Spring Break"){
+		printhrs($hoursSpecSp);	
+    } //Spring Break
+    
+}//foreach
+
+echo '<h3>SPRING 2014 Exceptions</h3>';
+foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
+	$desc= $hoursSpecSp->get('wcir:description');
+	if ($desc=="SPRING 2014 Exceptions"){
+		printhrs($hoursSpecSp);	
+    } //Spring 2014 Exceptions
+	
+}//foreach
+
+echo '<h3>Winter Break Hours</h3>';
+foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
+	$desc= $hoursSpecSp->get('wcir:description');
+	if ($desc=="Winter Break Hours"){
+		printhrs($hoursSpecSp);	
+    } //Winter Break Hours
+}//foreach
+
+function dt($tm){
+	$tm = new DateTime($tm, new DateTimeZone('America/New_York'));
+	$tm_st = $tm->format('m/d, Y');  
+	$tm_lg = $tm->format('Y-m-d H:i'); 
+	return $tm_st; 
+}
+
+function printhrs($hoursSpecSp){
+			//Open or Closed?
 		$status= $hoursSpecSp->get('wcir:openStatus'); 
 	    print "<br/>";	    
 	    $sd=$hoursSpecSp->get('wcir:validFrom');
@@ -58,77 +98,8 @@ foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
 		else if ($status=="Closed"){
 	    	print " <strong>".$status."</strong> ";
 		}// if closed
-		print ' ('.$hoursSpecSp->get('wcir:description').')';		
-    } //holiday
-    
-} //foreach
-
-echo '<h3>Spring Break</h3>';
-foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
-	
-	$desc= $hoursSpecSp->get('wcir:description');
-	if ($desc=="Spring Break"){
-		print $hoursSpecSp->get('wcir:openStatus');
-		print ' : ';
-		print $hoursSpecSp->get('wcir:validFrom');
-		print ' - ';
-		print $hoursSpecSp->get('wcir:validTo');
-		print '  ';
-		print $hoursSpecSp->get('wcir:opens');
-		print ' - ';
-		print $hoursSpecSp->get('wcir:closes');
-		print ' ('.$hoursSpecSp->get('wcir:description').')';
-		echo "<br/>";
-    }
-	
-}//foreach
-
-echo '<h3>SPRING 2014 Exceptions</h3>';
-foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
-	
-	$desc= $hoursSpecSp->get('wcir:description');
-	if ($desc=="SPRING 2014 Exceptions"){
-		print $hoursSpecSp->get('wcir:openStatus');
-		print ' : ';
-		print $hoursSpecSp->get('wcir:validFrom');
-		print ' - ';
-		print $hoursSpecSp->get('wcir:validTo');
-		print '  ';
-		print $hoursSpecSp->get('wcir:opens');
-		print ' - ';
-		print $hoursSpecSp->get('wcir:closes');
-		print ' ('.$hoursSpecSp->get('wcir:description').')';
-		echo "<br/>";
-    }
-	
-}//foreach
-
-echo '<h3>Winter Break Hours</h3>';
-foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
-	$desc= $hoursSpecSp->get('wcir:description');
-	if ($desc=="Winter Break Hours"){
-		print $hoursSpecSp->get('wcir:openStatus');
-		print ' : ';
-		print ' : ';
-		print $hoursSpecSp->get('wcir:validFrom');
-		print ' - ';
-		print $hoursSpecSp->get('wcir:validTo');
-		print '  ';
-		print $hoursSpecSp->get('wcir:opens');
-		print ' - ';
-		print $hoursSpecSp->get('wcir:closes');
-		print ' ('.$hoursSpecSp->get('wcir:description').')';
-		echo "<br/>";
-		}
-}//foreach
-
-function dt($tm){
-	$tm = new DateTime($tm, new DateTimeZone('America/New_York'));
-	$tm_st = $tm->format('Y-m-d');  
-	$tm_lg = $tm->format('Y-m-d H:i'); 
-	return $tm_st; 
+		//print ' ('.$hoursSpecSp->get('wcir:description').')';		
 }
-
 //var_dump($hoursSpec);
 
 ?>
