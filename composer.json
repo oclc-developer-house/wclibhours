@@ -1,0 +1,6 @@
+{
+    "require": {
+        "easyrdf/easyrdf": "*"
+    }
+}
+
