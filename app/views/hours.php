@@ -59,7 +59,38 @@ $spHoursResources = $graph->allOfType('wcir:specialHours');
 if (count($spHoursResources)!==0){
 
 	echo '<h2>Special Hours</h2>';
+	$arrkey_all=[];
+	$arrhrs_all=[]; 
+	$arr_desc=[];
+	foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
+		$desc= $hoursSpecSp->get('wcir:description');
+		//print_r($desc);
+		//echo "<br/>";
+		//print_r($desc->getValue());
+		$v=$desc->getValue();
+		if (!(in_array($v, $arr_desc))){
+			array_push($arr_desc, $v);    
+		}
+		$arrhrs_all[rtndate($hoursSpecSp)]=rtnstatushrs($hoursSpecSp);
+		array_push($arrkey_all, rtndate($hoursSpecSp));    
+	} //foreach
 
+	$arrkeySorted_all = bubbleSort($arrkey_all);
+	//sortprinthrs($arrkeySorted_all, $arrhrs_all);
+	//print_r($arr_desc);
+	
+	for ($i = 0, $l = count($arr_desc); $i < $l; ++$i){
+		$v=$arr_desc[$i];
+		echo "<br/><strong>".$v."</strong><br/>";
+		foreach ($arrhrs_all as $value){
+			if ((strpos($value, $v) !== false)){
+				print_r($value);
+			}//if
+		}//foreach
+		echo "<br/>";
+	}//for
+
+/*
 	echo '<h3>Holidays</h3>';
 	$arrkey=[];
 	$arrhrs=[];    
@@ -112,7 +143,7 @@ if (count($spHoursResources)!==0){
 	} //foreach
 	$arrkeySorted_wb = bubbleSort($arrkey_wb);
 	sortprinthrs($arrkeySorted_wb, $arrhrs_wb);
-
+*/
 }// If special hours is not an empty array
 
 
@@ -188,6 +219,8 @@ function rtndaterange($hoursSpecSp){
 function rtnstatushrs($hoursSpecSp){
 		$sd=$hoursSpecSp->get('wcir:validFrom');
 		$endd=$hoursSpecSp->get('wcir:validTo');	
+		$desc= $hoursSpecSp->get('wcir:description');
+
 		if ($sd==$endd) {$rt= "<br/>".dt($sd)." ";}
 		else {$rt ="<br/>".dt($sd)." - ".dt($endd)." ";}
 		
@@ -203,6 +236,8 @@ function rtnstatushrs($hoursSpecSp){
 		if ($status=="Open24Hours"){
 			$rt .= " 24/7 ";
 		}
+		$rt.=" (".$desc.")";
+		
 		return $rt;
 }
 
