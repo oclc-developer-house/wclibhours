@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-require 'app/helpers/application_helper.php';
+require 'app/helpers/application_helper_typemapped.php';
 require 'app/models/institution.php';
 require 'app/models/hours_spec.php';
 
