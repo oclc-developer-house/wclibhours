@@ -90,60 +90,6 @@ if (count($spHoursResources)!==0){
 		echo "<br/>";
 	}//for
 
-/*
-	echo '<h3>Holidays</h3>';
-	$arrkey=[];
-	$arrhrs=[];    
-	foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
-		$desc= $hoursSpecSp->get('wcir:description');
-		if ($desc=="Holiday"){
-			$arrhrs[rtndate($hoursSpecSp)]=rtnstatushrs($hoursSpecSp);
-			array_push($arrkey, rtndate($hoursSpecSp));    	
-		} //holiday
-	} //foreach
-	$arrkeySorted = bubbleSort($arrkey);
-	sortprinthrs($arrkeySorted, $arrhrs);
-
-	echo '<h3>Spring Break</h3>';
-	$arrkey_sb=[];
-	$arrhrs_sb=[];
-	foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
-		$desc= $hoursSpecSp->get('wcir:description');
-		if ($desc=="Spring Break"){
-			//date, status, hours
-			$arrhrs_sb[rtndate($hoursSpecSp)]=rtnstatushrs($hoursSpecSp);
-			array_push($arrkey_sb, rtndate($hoursSpecSp));    	
-		} //if spring break    
-	} //foreach
-	$arrkeySorted_sb = bubbleSort($arrkey_sb);
-	sortprinthrs($arrkeySorted_sb, $arrhrs_sb);
-
-	echo '<h3>SPRING 2014 Exceptions</h3>';
-	$arrkey_se=[];
-	$arrhrs_se=[];
-	foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
-		$desc= $hoursSpecSp->get('wcir:description');
-		if ($desc=="SPRING 2014 Exceptions"){
-			$arrhrs_se[rtndate($hoursSpecSp)]=rtnstatushrs($hoursSpecSp);
-			array_push($arrkey_se, rtndate($hoursSpecSp));    	
-		} //
-	} //foreach
-	$arrkeySorted_se = bubbleSort($arrkey_se);
-	sortprinthrs($arrkeySorted_se, $arrhrs_se);
-
-	echo '<h3>Winter Break Hours</h3>';
-	$arrkey_wb=[];
-	$arrhrs_wb=[];
-	foreach ($spHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpecSp){
-		$desc= $hoursSpecSp->get('wcir:description');
-		if ($desc=="Winter Break Hours"){
-			$arrhrs_wb[rtndate($hoursSpecSp)]=rtnstatushrs($hoursSpecSp);
-			array_push($arrkey_wb, rtndate($hoursSpecSp));    	
-		} //
-	} //foreach
-	$arrkeySorted_wb = bubbleSort($arrkey_wb);
-	sortprinthrs($arrkeySorted_wb, $arrhrs_wb);
-*/
 }// If special hours is not an empty array
 
 
