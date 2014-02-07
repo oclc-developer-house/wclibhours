@@ -1,5 +1,5 @@
 <?php
-  set_include_path('../../');
+  set_include_path(get_include_path() . PATH_SEPARATOR . '../../');
   require_once "../app/controllers/application_controller.php";
   require_once "../app/models/organization.php";  
   EasyRdf_TypeMapper::set('schema:Organization', 'Organization');

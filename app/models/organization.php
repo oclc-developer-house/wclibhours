@@ -1,5 +1,7 @@
 <?php
-require_once '../lib/graph.php';
+  set_include_path(get_include_path() . PATH_SEPARATOR . '../../');
+  require_once 'lib/graph.php';
+EasyRdf_TypeMapper::set('schema:Organization', 'Organization');
 function buildOrganizationGraph($wcid) {
       $arr_org_uris = array("https://worldcat.org/wcr/organization/data/");
       $graph_org = new EasyRdf_Graph();
@@ -44,14 +46,35 @@ class Organization extends EasyRdf_Resource
             }
             return null;
         }
-    
+
+        function print_branchOf()
+        {
+            foreach ($this->all('schema:branchOf') as $parent_org) {
+				echo $parent_org->get("wcir:unitName");
+                $bOfhrs= str_replace("https://www.worldcat.org/wcr/organization/resource/","../../basic/index.php?org=", $parent_org);  //link to hours  
+                $bOflib= str_replace("https://www.worldcat.org/wcr/organization/resource/","../../app/views/organization.php?org=", $parent_org);  //link to hours  
+              print "<li><a href=".$bOflib.">".Library."</a> (<a href=".$bOfhrs.">Hours</a>)</li>";
+            }
+            return null;
+        }
+       
+        function print_hasBranch()
+        {
+            foreach ($this->all('wcir:hasBranch') as $branch_org) {
+            	echo $branch_org->get("wcir:unitName");
+
+                $hasBhrs= str_replace("https://www.worldcat.org/wcr/organization/resource/","../../basic/index.php?org=", $branch_org);  //link to hours  
+                $hasBlib= str_replace("https://www.worldcat.org/wcr/organization/resource/","../../app/views/organization.php?org=", $branch_org);  //link to hours  
+                print "<li><a href=".$hasBlib.">Library</a> (<a href=".$hasBhrs.">Hours</a>)</li>";
+
+            }
+            return null;
+        }
+   
         function getName()
         {
-          $name = $this->get('wcir:unitName');
-          if (empty($name)){
-          $name = $this->get('wcir:institutionName');
-          }
-          return $name;
+          return $this->get('wcir:unitName');
         }
+       
 }   
 ?>

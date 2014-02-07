@@ -1,14 +1,14 @@
 <?php
-    set_include_path('../../');
-    require_once "../app/controllers/application_controller.php";
-    require_once "../app/models/organization.php"; 
-  $graph = buildOrganizationGraph($myorg_rdf);
+  set_include_path(get_include_path() . PATH_SEPARATOR . '../../');
+  require_once "app/controllers/application_controller.php";
+  require_once 'lib/graph.php';
+  require_once 'app/models/organization.php';
+  $graph = buildOrganizationGraph($myorg_id);
 ?>
 
 <html>
 <head><title>EasyRdf Worldcat Branch Info Example</title></head>
 <body>
-<p>***EasyRdf Worldcat Branch Info Example***</p>
 
 <?php
   $branch = $graph->allOfType('http://schema.org/Organization');
