@@ -3,7 +3,7 @@
     require_once "app/models/organization.php";
     require_once "app/controllers/application_controller.php";
   
-  $graph = buildOrganizationGraph($myorg_rdf);
+  $graph = buildOrganizationGraph($myorg_id);
 ?>
 
 <html>

@@ -2,14 +2,13 @@
     set_include_path('../../');
     require_once "app/controllers/application_controller.php";
     require_once "app/models/hours.php";
-    
-  $graph = buildHoursGraph($myorg_rdf);
 
+$graph = buildHoursGraph($myorg_id);
 echo '<h1>Florida International University Medical Library</h1>';
 echo '<h2>Normal Hours</h2>';
 
-$normalHoursResources = $graph->allOfType('wcir:normalHours');
-
+$normalHoursResources = $graph->allResources('wcir:normalHours', 'rdf:type');
+$normalHoursResources;
 foreach ($normalHoursResources[0]->all('wcir:hoursSpecifiedBy') as $hoursSpec){
     //print $hoursSpec->getUri() . "\n";
     $uri=$hoursSpec->getUri();    

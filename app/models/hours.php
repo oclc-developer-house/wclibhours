@@ -2,17 +2,20 @@
     set_include_path('../../');
     require_once "lib/graph.php";
                     
-	function buildHoursGraph($wcid_rdf) {
-	  $arr_hours_uris = array("https://worldcat.org/wcr/organization/data/"); 
-                //    "https://worldcat.org/wcr/normal-hours/data/", 
-                //    "https://worldcat.org/wcr/special-hours/data/");
-		$graph_hrs = buildGraph($arr_hours_uris, $wcid_rdf);
-		$norm = $graph_hrs->typeAsResource();
-		echo $norm;
-		return $graph_hrs;
-		
+	function buildHoursGraph($wcid) {
 		EasyRdf_TypeMapper::set('http://purl.org/oclc/ontology/wcir/normalHours', 'Model_Hours');
 		EasyRdf_TypeMapper::set('http://purl.org/oclc/ontology/wcir/specialHours', 'Model_Hours'); 
+
+	  $arr_hours_uris = array("https://worldcat.org/wcr/organization/data/", 
+                "https://worldcat.org/wcr/normal-hours/data/", 
+                "https://worldcat.org/wcr/special-hours/data/");
+    $graph_hrs = new EasyRdf_Graph();
+ //   $graph_hrs->parseFile("../../data/org.1095.rdf");
+ //   $graph_hrs->parseFile("../../data/hrs.1095.rdf");            
+		$graph_hrs = buildGraph($arr_hours_uris, $wcid);
+
+		return $graph_hrs;
+
 	}
 	
 class Model_Hours extends EasyRdf_Resource

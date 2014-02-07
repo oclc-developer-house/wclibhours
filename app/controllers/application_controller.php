@@ -3,7 +3,7 @@
 if (isset( $_GET['org'] )){
 	$myorg = $_GET['org']; // Query Param
 	if (is_numeric($myorg)){
-		$myorg_rdf = $myorg.".rdf";
+	  $myorg_id = $myorg;
 	}
 	else {
 	//error or check user's location for nearest organization

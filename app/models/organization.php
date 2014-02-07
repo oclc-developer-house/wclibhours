@@ -6,7 +6,10 @@ EasyRdf_TypeMapper::set('http://schema.org/Organization', 'Model_Organization');
 
 function buildOrganizationGraph($wcid_rdf) {
       $arr_org_uris = array("https://worldcat.org/wcr/organization/data/");
+      $graph_org = new EasyRdf_Graph();
+    //  $graph_org->parseFile("../../data/org.1095.rdf");
 		  $graph_org = buildGraph($arr_org_uris, $wcid_rdf);
+		  print_r($graph_org->serialise('turtle'));
 		  return $graph_org;
 }
 
