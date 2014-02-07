@@ -1,4 +1,7 @@
 <?php
+  /**
+   * Load multiple resource URIs from an array into a graph
+  **/
   set_include_path(get_include_path() . PATH_SEPARATOR . '../');
   require_once "vendor/autoload.php";   
 
@@ -11,7 +14,6 @@
 		foreach($arr_uris as $uri){
 			try {
 			  $uri = $uri . $id_wcir . '.rdf';
-			  print_r($uri);
 			  EasyRdf_Http::setDefaultHttpClient($client);
 				$graph->load($uri, "rdfxml");
 				$graph->dump();

@@ -22,7 +22,7 @@ function graphBranches($graph, $property){
  }
  /** Not working
  * function graphChildBranches($graph){
-  return graphBranches($src_graph, 'wcir:hasBranch');
+  return graphBranches($graph, 'wcir:hasBranch');
  }
 
  * function graphParentBranches($graph){ 
@@ -34,6 +34,7 @@ function graphBranches($graph, $property){
   return graphBranches(graphParentBranches($graph), 'wcir:hasBranch');
  }
 **/
+
 class Organization extends EasyRdf_Resource
 {          
         function branchOf()

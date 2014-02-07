@@ -17,10 +17,16 @@ $org = $resources[0];
   </style>
 </head>
 <body>
-
-
-<h1 typeOf= <?= '"' . $org->type() . '"' ?>> <?=$org->get('wcir:institutionName') ?></h1>
 <?php
+  if (count($org)!==0){
+?>
+  <h1 typeOf= <?= '"' . $org->type() . '"' ?>>
+ <a href="../app/views/organization.php?org=<?= $myorg ?>">
+ <?=$org->get('wcir:institutionName') ?>
+</a>
+ </h1>
+<?php
+}
 $normalHoursResources = $graph->allOfType('wcir:normalHours');
 
 //Display only if normal hrs is not empty
@@ -102,7 +108,7 @@ if (count($spHoursResources)!==0){
 
 }// If special hours is not an empty array
 
-include 'organization.php';
+include 'organization_partial.php';
 ?>
 
 
