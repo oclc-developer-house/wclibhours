@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:wcir="http://purl.org/oclc/ontology/wcir/" xmlns:schema="http://schema.org/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:umbel="http://umbel.org/umbel#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:library="http://purl.org/library/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcterms="http://purl.org/dc/terms/">
+    <rdf:Description rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807">
+        <rdf:type rdf:resource="http://purl.org/oclc/ontology/wcir/normalHours"/>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807#Friday">
+                <wcir:closes>17:00</wcir:closes>
+                <wcir:opens>08:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:dayOfWeek rdf:resource="http://purl.org/goodrelations/v1#Friday"/>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807#Wednesday">
+                <wcir:closes>20:00</wcir:closes>
+                <wcir:opens>08:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:dayOfWeek rdf:resource="http://purl.org/goodrelations/v1#Wednesday"/>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807#Tuesday">
+                <wcir:closes>20:00</wcir:closes>
+                <wcir:opens>08:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:dayOfWeek rdf:resource="http://purl.org/goodrelations/v1#Tuesday"/>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807#Thursday">
+                <wcir:closes>20:00</wcir:closes>
+                <wcir:opens>08:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:dayOfWeek rdf:resource="http://purl.org/goodrelations/v1#Thursday"/>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807#Sunday">
+                <wcir:closes>17:00</wcir:closes>
+                <wcir:opens>12:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:dayOfWeek rdf:resource="http://purl.org/goodrelations/v1#Sunday"/>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807#Saturday">
+                <wcir:closes>17:00</wcir:closes>
+                <wcir:opens>10:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:dayOfWeek rdf:resource="http://purl.org/goodrelations/v1#Saturday"/>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/normal-hours/resource/128807#Monday">
+                <wcir:closes>20:00</wcir:closes>
+                <wcir:opens>08:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:dayOfWeek rdf:resource="http://purl.org/goodrelations/v1#Monday"/>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:normalHoursOf rdf:resource="https://worldcat.org/wcr/organization/resource/128807"/>
+    </rdf:Description>
+</rdf:RDF>

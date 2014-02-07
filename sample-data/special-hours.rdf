@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:wcir="http://purl.org/oclc/ontology/wcir/" xmlns:schema="http://schema.org/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:umbel="http://umbel.org/umbel#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:library="http://purl.org/library/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcterms="http://purl.org/dc/terms/">
+    <rdf:Description rdf:about="https://worldcat.org/wcr/special-hours/resource/128807">
+        <rdf:type rdf:resource="http://purl.org/oclc/ontology/wcir/specialHours"/>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/special-hours/resource/128807#6972">
+                <wcir:openStatus>Closed</wcir:openStatus>
+                <wcir:validFrom>2013-12-25T12:00:00</wcir:validFrom>
+                <wcir:validTo>2013-12-25T12:00:00</wcir:validTo>
+                <wcir:description>Christmas</wcir:description>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+        <wcir:hoursSpecifiedBy>
+            <wcir:hoursSpecification rdf:about="https://worldcat.org/wcr/special-hours/resource/128807#19096">
+                <wcir:closes>17:00</wcir:closes>
+                <wcir:opens>09:00</wcir:opens>
+                <wcir:openStatus>Open</wcir:openStatus>
+                <wcir:validFrom>2014-03-16T12:00:00</wcir:validFrom>
+                <wcir:validTo>2014-03-22T12:00:00</wcir:validTo>
+                <wcir:description>Spring Break 2014</wcir:description>
+            </wcir:hoursSpecification>
+        </wcir:hoursSpecifiedBy>
+    </rdf:Description>
+    <wcir:specialHoursOf rdf:resource="https://worldcat.org/wcr/organization/resource/128807"/>
+</rdf:RDF>

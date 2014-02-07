@@ -1,5 +1,4 @@
 <?php
-
 if (isset( $_GET['org'] )){
 	$myorg = $_GET['org']; // Query Param
 	if (is_numeric($myorg)){
@@ -13,5 +12,4 @@ if (isset( $_GET['org'] )){
 else{
 	echo "Please specify the OCLC institution number in the URL.<br/>e.g. hrs.php?org=110570";
 }//if org not set
-
 ?>
