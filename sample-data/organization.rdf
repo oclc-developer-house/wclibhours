@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:wcir="http://purl.org/oclc/ontology/wcir/" xmlns:schema="http://schema.org/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:umbel="http://umbel.org/umbel#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:library="http://purl.org/library/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcterms="http://purl.org/dc/terms/">
+    <rdf:Description rdf:about="https://worldcat.org/wcr/organization/resource/128807">
+        <rdf:type rdf:resource="http://schema.org/Organization"/>
+        <rdf:type rdf:resource="http://purl.org/oclc/ontology/wcir/Other"/>
+        <schema:location rdf:resource="https://worldcat.org/wcr/postal-address/resource/614816"/>
+        <schema:location rdf:resource="https://worldcat.org/wcr/postal-address/resource/5680031"/>
+        <schema:location rdf:resource="https://worldcat.org/wcr/postal-address/resource/5680030"/>
+        <wcir:hasBranch rdf:resource="https://worldcat.org/wcr/organization/resource/129055"/>
+        <wcir:hasBranch rdf:resource="https://worldcat.org/wcr/organization/resource/129056"/>
+        <wcir:hasBranch rdf:resource="https://worldcat.org/wcr/organization/resource/129057"/>
+        <wcir:hasBranch rdf:resource="https://worldcat.org/wcr/organization/resource/129058"/>
+        <schema:email>coombsk@oclc.org</schema:email>
+        <schema:email>schillingj@oclc.org</schema:email>
+        <schema:name>OCLC WorldShare Platform Sandbox Institution</schema:name>
+        <foaf:homepage rdf:resource="https://worldcat.org/platform"/>
+        <dcterms:identifier>128807</dcterms:identifier>
+        <wcir:institutionName>OCLC WorldShare Platform Sandbox Institution</wcir:institutionName>
+        <rdfs:seeAlso rdf:resource="https://worldcat.org/wcr/isil/resource/OCLC-OCPSB"/>
+        <wcir:testInstitution>true</wcir:testInstitution>
+        <wcir:trainingInstitution>false</wcir:trainingInstitution>
+        <wcir:normalHours rdf:resource="https://worldcat.org/wcr/normal-hours/resource/128807"/>
+        <umbel:isLike rdf:resource="https://worldcat.org/wcr/oclc-account/resource/OCLC%20COOP%20PLATFORM%20SANDBOX%20INST"/>
+        <umbel:isLike rdf:resource="https://worldcat.org/wcr/oclc-customer/resource/01OCLC20115398"/>
+        <library:manages rdf:resource="https://worldcat.org/wcr/oclc-symbol/resource/OCPSB"/>
+        <wcir:usesOPAC rdf:resource="https://worldcat.org/wcr/opac/resource/9341892"/>
+        <schema:telephone>614-761-6000</schema:telephone>
+        <wcir:specialHours rdf:resource="https://worldcat.org/wcr/special-hours/resource/128807"/>
+        <wcir:publicWiFi>false</wcir:publicWiFi>
+        <wcir:hasWMSConfig rdf:resource="https://worldcat.org/wcr/wms-config/resource/128807"/>
+    </rdf:Description>
+</rdf:RDF>
